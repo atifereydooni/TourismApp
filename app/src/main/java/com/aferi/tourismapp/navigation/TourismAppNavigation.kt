@@ -7,7 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.aferi.placedetails.PlaceDetails
-import com.aferi.placelist.PlaceList
+import com.aferi.placelist.presentation.PlaceList
+import com.aferi.placelist.presentation.PlaceListViewModel
 
 @Composable
 fun TourismAppNavigation(
@@ -20,7 +21,8 @@ fun TourismAppNavigation(
         modifier = modifier
     ) {
         composable("PlaceList") {
-            PlaceList(navController = navController)
+            val viewModel = PlaceListViewModel(navController)
+            PlaceList(onItemClick = viewModel::navigateToPlaceDetailsScreen)
         }
         composable("PlaceDetails") { PlaceDetails() }
     }
