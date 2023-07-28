@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TourismApp"
 include ':app'
+include ':features:placelist'
+include ':features:placedetails'
