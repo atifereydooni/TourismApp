@@ -10,12 +10,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-interface TourismRemoteDataSource {
+interface PlaceListRemoteDataSource {
 
     suspend fun getPlaceList(): Flow<Result<List<Place>>>
 }
 
-class TourismRemoteDataSourceImpl @Inject constructor() : TourismRemoteDataSource {
+class PlaceListRemoteDataSourceImpl @Inject constructor() : PlaceListRemoteDataSource {
 
     override suspend fun getPlaceList(): Flow<Result<List<Place>>> = callbackFlow {
         val fireStoreListener = EventListener<QuerySnapshot> { value, error ->

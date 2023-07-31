@@ -1,9 +1,11 @@
 package com.aferi.placelist.data.local
 
-interface TourismLocalDataSource {
+import javax.inject.Inject
+
+interface PlaceListLocalDataSource {
 
 }
 
-class TourismLocalDataSourceImpl : TourismLocalDataSource {
+class PlaceListLocalDataSourceImpl @Inject constructor() : PlaceListLocalDataSource {
 
 }

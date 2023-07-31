@@ -25,6 +25,7 @@ fun TourismAppNavigation(
             val viewModel: PlaceListViewModel = hiltViewModel()
             PlaceList(
                 navController = navController,
+                places = viewModel.places.value,
                 onItemClick = viewModel::navigateToPlaceDetailsScreen
             )
         }
