@@ -2,6 +2,7 @@ package com.aferi.tourismapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -21,8 +22,11 @@ fun TourismAppNavigation(
         modifier = modifier
     ) {
         composable("PlaceList") {
-            val viewModel = PlaceListViewModel(navController)
-            PlaceList(onItemClick = viewModel::navigateToPlaceDetailsScreen)
+            val viewModel: PlaceListViewModel = hiltViewModel()
+            PlaceList(
+                navController = navController,
+                onItemClick = viewModel::navigateToPlaceDetailsScreen
+            )
         }
         composable("PlaceDetails") { PlaceDetails() }
     }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "630044651155",
+    "project_id": "tourismapp-f8084",
+    "storage_bucket": "tourismapp-f8084.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630044651155:android:e8ba4e67ccaaeff5f6e766",
+        "android_client_info": {
+          "package_name": "com.aferi.tourismapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630044651155-m72b7djbbe9s0l60gn7qdntfgs6n4ec1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9CX0V7Kt-lqCyjLFQ9KYWiGoNvZYFPN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630044651155-m72b7djbbe9s0l60gn7qdntfgs6n4ec1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
