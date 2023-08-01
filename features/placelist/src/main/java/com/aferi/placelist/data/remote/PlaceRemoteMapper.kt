@@ -12,6 +12,7 @@ class PlaceRemoteMapper {
             subtitle = it.data?.get("Subtitle") as String,
             description = it.data?.get("Description") as String,
             imageUrl = it.data?.get("ImageUrl") as String,
+            rate = it.data?.get("Rate") as String
         )
     }
 }

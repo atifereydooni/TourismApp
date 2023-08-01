@@ -30,44 +30,11 @@ fun PlaceList(
     Column {
         LazyColumn {
             items(places) { place ->
-                Column(
-                    modifier = Modifier.clickable {
-                        onItemClick(navController)
-                    }
-                ) {
-                    AsyncImage(
-                        model = place.imageUrl,
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(150.dp)
-                    )
-                    Text(
-                        text = place.title,
-                        style = TextStyle(
-                            color = Black,
-                            fontSize = 20.sp,
-                        )
-                    )
-                    Text(
-                        text = place.subtitle,
-                        style = TextStyle(
-                            color = Black,
-                            fontSize = 18.sp,
-                        )
-                    )
-                    Text(
-                        text = place.description,
-                        style = TextStyle(
-                            color = Gray,
-                            fontSize = 14.sp,
-                        ),
-                        maxLines = 3,
-                        overflow = TextOverflow.Ellipsis
-                    )
-                    Spacer(modifier = Modifier.height(32.dp))
-                }
+                PlaceItem(
+                    place = place,
+                    navController = navController,
+                    onItemClick = onItemClick
+                )
             }
         }
     }
