@@ -1,6 +1,7 @@
 package com.aferi.tourismapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -25,7 +26,7 @@ fun TourismAppNavigation(
             val viewModel: PlaceListViewModel = hiltViewModel()
             PlaceList(
                 navController = navController,
-                places = viewModel.places.value,
+                places = viewModel.places.collectAsState().value,
                 onItemClick = viewModel::navigateToPlaceDetailsScreen
             )
         }

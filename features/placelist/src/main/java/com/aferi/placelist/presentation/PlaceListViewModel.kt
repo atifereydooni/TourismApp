@@ -1,13 +1,13 @@
 package com.aferi.placelist.presentation
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.aferi.placelist.data.model.Place
 import com.aferi.placelist.domain.GetPlaceListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,10 +16,10 @@ class PlaceListViewModel @Inject constructor(
     private val placeListUseCase: GetPlaceListUseCase
 ) : ViewModel() {
 
-    val places: MutableState<List<Place>> = mutableStateOf(emptyList())
+    val places = MutableStateFlow<List<Place>>(emptyList())
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             placeListUseCase.getPlaceList()
                 .collect {
                     when {

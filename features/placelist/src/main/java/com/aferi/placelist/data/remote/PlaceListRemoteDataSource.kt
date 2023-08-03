@@ -2,6 +2,7 @@ package com.aferi.placelist.data.remote
 
 import com.aferi.placelist.data.model.Place
 import com.google.firebase.firestore.EventListener
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -35,6 +36,7 @@ class PlaceListRemoteDataSourceImpl @Inject constructor() : PlaceListRemoteDataS
 
         Firebase.firestore
             .collection("Place")
+            .orderBy("Id", Query.Direction.DESCENDING)
             .addSnapshotListener(fireStoreListener)
         awaitClose()
     }
