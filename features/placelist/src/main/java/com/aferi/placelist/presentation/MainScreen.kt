@@ -1,20 +1,26 @@
-package com.aferi.placedetails
+package com.aferi.placelist.presentation
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.navigation.NavController
 import com.aferi.component.TourismAppToolbar
+import com.aferi.placelist.data.model.Place
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PlaceDetails() {
+fun MainScreen(
+    navController: NavController,
+    places: List<Place>,
+    onItemClick: (NavController) -> Unit
+) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     Scaffold(
         modifier = Modifier
@@ -22,14 +28,18 @@ fun PlaceDetails() {
         topBar = {
             TourismAppToolbar(
                 scrollBehavior,
-                Icons.Default.ArrowBack,
+                Icons.Default.Menu,
                 {}
             )
         }
     ) { values ->
-        Text(
-            modifier = Modifier.padding(values),
-            text = "Place Details"
+        PlaceList(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(values),
+            navController = navController,
+            places = places,
+            onItemClick = onItemClick
         )
     }
 }

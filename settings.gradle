@@ -16,3 +16,4 @@ rootProject.name = "TourismApp"
 include ':app'
 include ':features:placelist'
 include ':features:placedetails'
+include ':core:component'
