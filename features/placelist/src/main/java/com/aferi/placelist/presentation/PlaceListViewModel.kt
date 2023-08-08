@@ -19,6 +19,10 @@ class PlaceListViewModel @Inject constructor(
     val places = MutableStateFlow<List<Place>>(emptyList())
 
     init {
+        getPlaceList()
+    }
+
+    fun getPlaceList() {
         viewModelScope.launch(Dispatchers.IO) {
             placeListUseCase.getPlaceList()
                 .collect {
