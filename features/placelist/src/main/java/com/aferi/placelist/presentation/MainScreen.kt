@@ -19,7 +19,7 @@ import com.aferi.placelist.data.model.Place
 fun MainScreen(
     navController: NavController,
     places: List<Place>,
-    onItemClick: (NavController) -> Unit
+    onItemClick: (NavController, Place) -> Unit
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     Scaffold(

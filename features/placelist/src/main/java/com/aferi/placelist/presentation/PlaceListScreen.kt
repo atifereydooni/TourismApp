@@ -13,7 +13,7 @@ fun PlaceList(
     modifier: Modifier,
     navController: NavController,
     places: List<Place>,
-    onItemClick: (NavController) -> Unit
+    onItemClick: (NavController, Place) -> Unit
 ) {
     Column {
         LazyColumn {

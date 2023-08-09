@@ -39,8 +39,13 @@ class PlaceListViewModel @Inject constructor(
         }
     }
 
-    fun navigateToPlaceDetailsScreen(navController: NavController) {
-        navController.navigate("PlaceDetails")
+    fun navigateToPlaceDetailsScreen(navController: NavController, place: Place) {
+        navController.navigate(
+            "PlaceDetails/${place.id}" +
+                    "/${place.title}/${place.subtitle}/${place.description}" +
+                    "/${place.imageUrl.replace("/", "$$$")}" +
+                    "/${place.rate}"
+        )
     }
 
 }
