@@ -49,7 +49,7 @@ fun PlaceDetails(
                 scrollBehavior,
                 Icons.Default.ArrowBack
             ) {
-                navController.navigateUp()
+                navController.popBackStack()
             }
         }
     ) { values ->

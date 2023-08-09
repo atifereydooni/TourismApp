@@ -21,7 +21,7 @@ fun TourismAppToolbar(
             Text(text = "Stockholm Tourism")
         },
         navigationIcon = {
-            IconButton(onClick = { navigationIconClick }) {
+            IconButton(onClick = navigationIconClick) {
                 Icon(
                     imageVector = navigationIcon,
                     contentDescription = "Menu Icon"

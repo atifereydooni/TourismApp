@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -33,7 +34,6 @@ fun PlaceItem(
 ) {
     Column(
         modifier = modifier
-            .padding(5.dp)
             .clickable {
                 onItemClick(navController, place)
             }
@@ -72,6 +72,8 @@ fun PlaceItem(
                 )
         }
         Text(
+            modifier = Modifier
+                .padding(PaddingValues(10.dp, 10.dp, 10.dp, 0.dp)),
             text = place.title,
             style = TextStyle(
                 color = Color.Black,
@@ -79,6 +81,8 @@ fun PlaceItem(
             )
         )
         Text(
+            modifier = Modifier
+                .padding(PaddingValues(10.dp, 0.dp, 10.dp, 0.dp)),
             text = place.subtitle,
             style = TextStyle(
                 color = Color.Black,
@@ -86,6 +90,8 @@ fun PlaceItem(
             )
         )
         Text(
+            modifier = Modifier
+                .padding(PaddingValues(10.dp, 5.dp, 10.dp, 0.dp)),
             text = place.description,
             style = TextStyle(
                 color = Color.Gray,
@@ -94,6 +100,6 @@ fun PlaceItem(
             maxLines = 3,
             overflow = TextOverflow.Ellipsis
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(20.dp))
     }
 }
